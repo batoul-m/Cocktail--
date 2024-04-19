@@ -12,12 +12,12 @@ import java.util.Scanner;
 public class Cocktail {
 
     public static void main(String[] args) {
-       // Blender blend = new Blender();
-        //blend.blender();
+        Blender blend = new Blender();
+    
        
-        System.out.println("enter you count and size : ");
-        Scanner scan=new Scanner(System.in);
-        Cup c = new Cup(scan.nextInt(), scan.next());
-        System.out.println(c.getInfo());
+//        System.out.println("enter you count and size : ");
+//        Scanner scan=new Scanner(System.in);
+//        Cup c = new Cup(scan.nextInt(), scan.next());
+//        System.out.println(c.getInfo());
     }
 }

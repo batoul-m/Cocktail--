@@ -23,7 +23,6 @@ public class Fruits extends Ingrediants{
     public Fruits(int number, String type) {
         this.number = number;
         this.type = type;
-       // this.fcolor = color;
         count++;
     }
 
@@ -60,7 +59,7 @@ public class Fruits extends Ingrediants{
         return fcal.getFruitCalories(type);
     }
     
-
+ 
 
 
     public String getInfo() {

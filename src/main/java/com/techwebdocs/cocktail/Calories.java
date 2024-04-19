@@ -24,10 +24,10 @@ public class Calories {
         fruit = new String[]{"banana", "apple","blueberries","mango","pineapple","orange","cherry"}; 
         fruitCal = new double[]{69.0, 89.0,58.0,83.0,215.0,47.0,50.0}; 
         
-        milk=new String[]{"normal calories","light calories","oat milk"};
+        milk=new String[]{"normal","light","oat"};
         milkCal=new double[]{150.0,106.0,120};
         
-        sugar=new String[]{"white sugar","brown sugar"};
+        sugar=new String[]{"white","brown"};
         sugarCal=new double[]{385.0 ,380.0 };
     }
     

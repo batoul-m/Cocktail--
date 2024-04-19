@@ -12,11 +12,11 @@ public class Sugar extends Ingrediants{
     
     private double calories;
     private String type;
-    private String size;
+    private int size;
     private Calories sugarCal = new Calories();
     private Color sugarColor = new Color();
 
-    public Sugar( String type, String size) {
+    public Sugar( String type, int size) {
         this.type = type;
         this.size = size;
     }
@@ -28,7 +28,7 @@ public class Sugar extends Ingrediants{
     }
 
     public String getColor(String type){
-        return sugarColor.getSugarColor(size);
+        return sugarColor.getSugarColor(type);
     }
     
     public String getType() {
@@ -39,11 +39,11 @@ public class Sugar extends Ingrediants{
         this.type = type;
     }
 
-    public String getSize() {
+    public int getSize() {
         return size;
     }
 
-    public void setSize(String size) {
+    public void setSize(int size) {
         this.size = size;
     }
 

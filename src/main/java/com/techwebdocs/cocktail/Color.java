@@ -28,7 +28,7 @@ public class Color {
         fruitColorNumber=new int[][]{ {255, 255, 0},{255, 0, 0},{0, 0, 255},{255, 165, 0},{255, 255, 0},{255, 165, 0},{255, 0, 0}};
         fruitColor=new String[]{"Yellow","Red","Blue","Orange","Yellow","White","Orange","Red"};
         
-        sugar=new String[]{"white sugar","brown sugar"};
+        sugar=new String[]{"white","brown"};
         sugarColorNumber=new int[][]{ {255,255,255},{210,105,30}};
         sugarColor=new String[]{"white","light brown"};       
         

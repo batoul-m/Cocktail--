@@ -13,7 +13,7 @@ public class Cup {
     private String size ;
     private String allSize[]= {"small","medium","larg"};
     private int cupQuantity[]={200,400,600};
-
+    private int milkForCup[]={80,160,240};
     public Cup(){
         
     }
@@ -55,7 +55,14 @@ public class Cup {
     
     }
     
-
+    public int getMilkForCups(String cup){
+        for(int i=0;i<allSize.length;i++){
+            if(allSize[i].equalsIgnoreCase(cup)){
+                return milkForCup[i];
+            }
+        }
+        return -1 ;
+    }
     
     public String getInfo() {
         return "Cup{" + "count = " + count + ", size = " + size + '}';
