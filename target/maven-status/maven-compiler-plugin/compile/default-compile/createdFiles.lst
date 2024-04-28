@@ -5,6 +5,8 @@ com/techwebdocs/cocktail/Cocktail.class
 com/techwebdocs/cocktail/Sugar.class
 com/techwebdocs/cocktail/Cup.class
 com/techwebdocs/cocktail/Milk.class
+com/techwebdocs/cocktail/BlenderIsEmpty.class
 com/techwebdocs/cocktail/Calories.class
 com/techwebdocs/cocktail/Color.class
+com/techwebdocs/cocktail/BlenderOverFlow.class
 com/techwebdocs/cocktail/Fruits.class

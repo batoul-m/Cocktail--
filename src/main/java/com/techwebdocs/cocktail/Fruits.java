@@ -10,6 +10,7 @@ package com.techwebdocs.cocktail;
  */
 public class Fruits extends Ingrediants{
     private int number;
+    private static int fruiteNumber;
     private String type;
     private Color fcolor = new Color();
     private static int count;
@@ -22,10 +23,15 @@ public class Fruits extends Ingrediants{
     }
     public Fruits(int number, String type) {
         this.number = number;
+        fruiteNumber += number;
         this.type = type;
         count++;
     }
-
+    
+    public static int getFruitNumber(){
+        return fruiteNumber;
+    }
+    
     public int getNumber() {
         return number;
     }

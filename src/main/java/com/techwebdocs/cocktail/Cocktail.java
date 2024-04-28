@@ -9,15 +9,13 @@ package com.techwebdocs.cocktail;
  * @author user
  */
 import java.util.Scanner;
+import java.util.ArrayList;
+import java.util.Arrays;
 public class Cocktail {
 
-    public static void main(String[] args) {
-        Blender blend = new Blender();
-    
+    public static void main(String[] args) throws BlenderIsEmpty, BlenderOverFlow {
+       Blender blend = new Blender();
        
-//        System.out.println("enter you count and size : ");
-//        Scanner scan=new Scanner(System.in);
-//        Cup c = new Cup(scan.nextInt(), scan.next());
-//        System.out.println(c.getInfo());
-    }
+
+   }
 }

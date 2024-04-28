@@ -4,22 +4,25 @@
  */
 package com.techwebdocs.cocktail;
 
+import java.util.ArrayList;
+
 /**
  *
  * @author user
  */
 public class Calories {
     private String[] fruit ;
-    //= {"banana", "apple","blueberries","mango","pineapple"}; 
     private double[] fruitCal ;
-           // = {69.0, 89.0,58.0,83.0,215.0};
-    
+           
     private String[] milk;
     private double[] milkCal;
     
     private String[] sugar;
     private double[] sugarCal;
     
+    private static double totalCalories;
+    private String[] stringArray;
+
     public Calories() {
         fruit = new String[]{"banana", "apple","blueberries","mango","pineapple","orange","cherry"}; 
         fruitCal = new double[]{69.0, 89.0,58.0,83.0,215.0,47.0,50.0}; 
@@ -58,5 +61,39 @@ public class Calories {
             }
         }
         return -1.0;
+    }
+    
+     public void mixCalories(String[] ingredients) {
+        this.stringArray = ingredients;
+        double totalCalories = 0.0;
+        for (String ingredient : ingredients) {
+            double calories = -1.0;
+            calories = getFruitCalories(ingredient);
+            totalCalories += calories;
+            
+            if (calories == -1.0) {
+                calories = getMilkCalories(ingredient);
+                totalCalories += calories;
+            }
+            
+            if (calories == -1.0) {
+                calories = getSugarCalories(ingredient);
+                totalCalories += calories;
+            }
+            
+            if (calories != -1.0) {
+                totalCalories += calories;
+            }
+        }
+        this.totalCalories = totalCalories;
+    }
+     
+    public static void setTotalCalories(ArrayList<String> component){
+        String[] stringArray = component.toArray(new String[0]);
+        Calories calories = new Calories();
+        calories.mixCalories(stringArray);
+    }
+    public static double getTotalCalories(){
+        return totalCalories;
     }
 }
