@@ -14,8 +14,7 @@ public class Blender {
     private Cup userCup=new Cup();
     int numberOfCups=0;
     String typeOfCups= "";
-//    private String milkType,fruitType,sugarType;
-//    private double mixCalories = 0.0;
+
     Scanner scan = new Scanner(System.in); 
     public Blender() throws BlenderIsEmpty, BlenderOverFlow {
         do{
