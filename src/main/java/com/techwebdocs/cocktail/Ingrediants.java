@@ -9,7 +9,7 @@ package com.techwebdocs.cocktail;
  * @author user
  */
 
-public abstract class Ingrediants implements myinterface{
+public abstract class Ingrediants {
     
     public abstract double caloriescal();
 

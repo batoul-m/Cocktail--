@@ -8,6 +8,6 @@ package com.techwebdocs.cocktail;
  *
  * @author user
  */
-public interface myinterface {
+public interface Logger {
     
 }

@@ -6,7 +6,7 @@ import java.util.ArrayList;
 import java.util.Scanner;
 import java.util.Arrays;
 
-public class Blender {
+public class Blender implements Logger{
     
     ArrayList<Ingrediants> arr = new ArrayList <>();
     ArrayList<String> arr2 = new ArrayList <>();
