@@ -20,9 +20,10 @@ public class Blender implements Logger{
         do{
             System.out.println("1. choose cup size and how many cups you want\n"
                 + "2. add ingrediant\n"
-                + "3. pour\n"
-                + "4. get info\n"
-                + "5. Exit\n");
+                + "3.blend \n"
+                + "4. pour\n"
+                + "5. get info\n"
+                + "6. Exit\n");
             int choice = scan.nextInt();
             switch(choice){
                 case 1 :
@@ -31,15 +32,17 @@ public class Blender implements Logger{
                 case 2:
                     add();
                     break;
-                    
                 case 3:
                     blend();
                     break;
-                    
                 case 4:
+                    pour();
+                    break;
+                    
+                case 5:
                     getInfo();
                     break;
-                case 5:
+                case 6:
                     System.exit(0);
                     break;
                 default:
@@ -51,34 +54,28 @@ public class Blender implements Logger{
     }
    
     
-    private void add() throws BlenderOverFlow{
-        double fruiteJuice = Fruits.getFruitNumber()*40;
-
-        if((fruiteJuice + userCup.getMilkForCups(typeOfCups) )> ((userCup.getCupQuantity(typeOfCups))*numberOfCups)){   
-            throw new BlenderOverFlow();
-        }
-        else{
-        System.out.println("1. add fruits\n"
-            + "2. add milk\n"
-            + "3. add sugar if you want\n"
-            + "4. Exit\n");
-            int choiceIngrediant = scan.nextInt();
-                    switch(choiceIngrediant){
-                        case 1:
-                            addFruites();
-                            break;
-                        case 2:
-                            addMilk();
-                            break;
-                        case 3:
-                            addSugar();
-                            break;
-                        case 4:
-                            System.exit(0);
-                            break;
-                        default:
-                            System.out.println("Invalid choice!");    
-                    }
+    private void add(){
+    System.out.println("1. add fruits\n"
+        + "2. add milk\n"
+        + "3. add sugar if you want\n"
+        + "4. Exit\n");
+        int choiceIngrediant = scan.nextInt();
+            switch(choiceIngrediant){
+                case 1:
+                    addFruites();
+                    break;
+                case 2:
+                    addMilk();
+                    break;
+                case 3:
+                    addSugar();
+                    break;
+                case 4:
+                    System.exit(0);
+                    break;
+                default:
+                    System.out.println("Invalid choice!");    
+               
         }
     }
     
@@ -156,6 +153,17 @@ public class Blender implements Logger{
             Calories.setTotalCalories(arr2);
         }
         
+    }
+    
+    private void pour() throws BlenderOverFlow{
+        double fruiteJuice = Fruits.getFruitNumber()*40;
+
+        if((fruiteJuice + userCup.getMilkForCups(typeOfCups) )> ((userCup.getCupQuantity(typeOfCups))*numberOfCups)){   
+            throw new BlenderOverFlow();
+        }
+        else{
+            System.out.println("your selection is perfect to the cup size");       
+        }
     }
 }
 
