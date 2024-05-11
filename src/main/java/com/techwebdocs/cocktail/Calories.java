@@ -24,8 +24,8 @@ public class Calories {
     private String[] stringArray;
 
     public Calories() {
-        fruit = new String[]{"banana", "apple","blueberries","mango","pineapple","orange","cherry"}; 
-        fruitCal = new double[]{69.0, 89.0,58.0,83.0,215.0,47.0,50.0}; 
+        fruit = new String[]{"banana", "strawberry","apple","blueberries","mango","pineapple","orange","cherry"}; 
+        fruitCal = new double[]{69.0,53.0, 89.0,58.0,83.0,215.0,47.0,50.0}; 
         
         milk=new String[]{"normal","light","oat"};
         milkCal=new double[]{150.0,106.0,120};

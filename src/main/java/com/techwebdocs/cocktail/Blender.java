@@ -3,167 +3,102 @@ package com.techwebdocs.cocktail;
 
 
 import java.util.ArrayList;
-import java.util.Scanner;
 import java.util.Arrays;
+import javax.swing.*;
 
 public class Blender implements Logger{
     
-    ArrayList<Ingrediants> arr = new ArrayList <>();
-    ArrayList<String> arr2 = new ArrayList <>();
-    private String Component;
-    private Cup userCup=new Cup();
-    int numberOfCups=0;
-    String typeOfCups= "";
-
-    Scanner scan = new Scanner(System.in); 
-    public Blender() throws BlenderIsEmpty, BlenderOverFlow {
-        do{
-            System.out.println("1. choose cup size and how many cups you want\n"
-                + "2. add ingrediant\n"
-                + "3.blend \n"
-                + "4. pour\n"
-                + "5. get info\n"
-                + "6. Exit\n");
-            int choice = scan.nextInt();
-            switch(choice){
-                case 1 :
-                    cup();
-                    break;
-                case 2:
-                    add();
-                    break;
-                case 3:
-                    blend();
-                    break;
-                case 4:
-                    pour();
-                    break;
-                    
-                case 5:
-                    getInfo();
-                    break;
-                case 6:
-                    System.exit(0);
-                    break;
-                default:
-                    System.out.println("Invalid choice!");
-            }
-            
-            
-        }while (true);
-    }
-   
+    private static ArrayList<Ingrediants> arr = new ArrayList <>();
+    private static ArrayList<String> arr2 = new ArrayList <>();
+    private Cup userCup = new Cup();
+    int numberOfCups = 0;
+    String typeOfCups = "";
+    private String result = "";
+    private int fnumbers = 0;
+    public Blender(){} 
     
-    private void add(){
-    System.out.println("1. add fruits\n"
-        + "2. add milk\n"
-        + "3. add sugar if you want\n"
-        + "4. Exit\n");
-        int choiceIngrediant = scan.nextInt();
-            switch(choiceIngrediant){
-                case 1:
-                    addFruites();
-                    break;
-                case 2:
-                    addMilk();
-                    break;
-                case 3:
-                    addSugar();
-                    break;
-                case 4:
-                    System.exit(0);
-                    break;
-                default:
-                    System.out.println("Invalid choice!");    
-               
-        }
-    }
-    
-    private void addFruites(){
-        System.out.println("Enter your how nany from your choice from these and then your choice\n"+
-                        "{banana,apple,blueberries,mango,pineapple,orange,cherry}");
-        int num = scan.nextInt();
-        Component = scan.next();
-        arr.add(new Fruits(num,Component));
-        for(int i = num;i>0;i--){
-            arr2.add(Component);
-        }
-        
-        
-    }
-    
-    private void addMilk(){
-        System.out.println("Enter your milk type of milk \n"
-                            +"{normal milk,light calories,oat milk}");
-        Component = scan.next();
-        arr.add(new Milk(Component));
-        arr2.add(Component);
-    }
-    
-    private void addSugar(){
-        System.out.println("Enter your sugar type then enter how many spoons you want \n"
-                            +"{white,brown }");
-        Component = scan.next();
-        int num = scan.nextInt();
-        arr.add(new Sugar(Component,num));
+    public void addFruites(int num , String fruit){
+        fnumbers += num ;
+        arr.add(new Fruits(num,fruit));
         for(int i=num;i>0;i--){
-            arr2.add(Component);
+            arr2.add(fruit);
+        }   
+    }
+    public void addMilk(String milk){
+        arr.add(new Milk(milk));
+        arr2.add(milk);
+    }
+    
+    public void addSugar(int num , String sugar){
+        arr.add(new Sugar(sugar,num));
+        for(int i=num;i>0;i--){
+            arr2.add(sugar);
         }
     }
     
     
-    private void cup(){
-        System.out.println("Enter how many cup you want then your cup size \n"+
-                      "{small,medium,larg}");
-                    
-        numberOfCups=scan.nextInt();
-        typeOfCups=scan.next();
+    public void cup(int numberOfCups , String typeOfCups){
         userCup=new Cup(numberOfCups,typeOfCups);
     }
     
     
     
-    private void getInfo(){
-        int i = 1;
-        String result = "no ingrediants";
-        result="the drink color = "+Arrays.toString(Color.getMixColor())+"  the total calories "+Calories.getTotalCalories();
-        System.out.println(result);
-        System.out.println("if you more details click yes");
-        if(scan.next().equalsIgnoreCase("yes")){
-            for(Ingrediants I : arr) {
-                if(I instanceof Fruits)
-                    result=(((Fruits) I).getInfo());
-                else if(I instanceof Milk)
-                    result=(((Milk) I).getInfo());
-                else if(I instanceof Sugar)
-                    result=(((Sugar) I).getInfo());
-            System.out.println(i+"-  "+result);
-            i++;}
-        }
+    public String getInfo(){
+        String result1="the drink color = "+Arrays.toString(Color.getMixColor())+"\n  the total calories "+Calories.getTotalCalories();
+        return result1;
+    }
+    public int getMixRed(){
+        int red = (Color.getMixColor())[0];
+        return red;
+    }
+    public int getMixBlue(){
+        int blue = (Color.getMixColor())[2];
+        return blue;
+    }
+    public int getMixGreen(){
+        int green = (Color.getMixColor())[1];
+        return green;
     }
     
-    
-    
-    private void blend() throws BlenderIsEmpty{
+    public String getDetailedInfo(){
+        int i = 1;
+        String detail = "";
+        for(Ingrediants I : arr) {
+            if(I instanceof Fruits)
+                result=(((Fruits) I).getInfo());
+            else if(I instanceof Milk)
+                result=(((Milk) I).getInfo());
+            else if(I instanceof Sugar)
+                result=(((Sugar) I).getInfo());
+            detail = detail + "\n"+ result ;
+            i++;
+        }
+        return detail;
+    }
+  
+    public void blend() throws BlenderIsEmpty{
         if(arr.isEmpty()){
             throw new BlenderIsEmpty();
         }
         else{
             Color.setMixColor(arr2);
             Calories.setTotalCalories(arr2);
-        }
+        
         
     }
+    }
     
-    private void pour() throws BlenderOverFlow{
-        double fruiteJuice = Fruits.getFruitNumber()*40;
+    public void pour() throws BlenderOverFlow{
+        double fruiteJuice = fnumbers*40;
 
         if((fruiteJuice + userCup.getMilkForCups(typeOfCups) )> ((userCup.getCupQuantity(typeOfCups))*numberOfCups)){   
             throw new BlenderOverFlow();
         }
-        else{
-            System.out.println("your selection is perfect to the cup size");       
-        }
+    }
+    
+    public void clear(){
+        arr.clear();
+        arr2.clear();
     }
 }
 

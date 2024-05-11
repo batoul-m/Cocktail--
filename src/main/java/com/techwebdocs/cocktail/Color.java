@@ -23,9 +23,9 @@ public class Color {
     private static int[] mixColor;
     private String[] stringArray;
     public Color(){
-        fruit=new String[]{"banana", "apple","blueberries","mango","pineapple","orange","cherry"}; 
-        fruitColorNumber=new int[][]{ {255, 255, 0},{255, 0, 0},{0, 0, 255},{255, 165, 0},{255, 255, 0},{255, 165, 0},{255, 0, 0}};
-        fruitColor=new String[]{"Yellow","Red","Blue","Orange","Yellow","White","Orange","Red"};
+        fruit=new String[]{"banana", "apple","blueberries","mango","strawberry","orange","cherry","pineapple"}; 
+        fruitColorNumber=new int[][]{ {255, 255, 0},{255, 0, 0},{0, 0, 255},{255, 165, 0},{255, 0, 0},{255, 165, 0},{255, 0, 0},{255,255,0}};
+        fruitColor=new String[]{"Yellow","Red","Blue","Orange","Red","White","Orange","Red","Yellow"};
         
         sugar=new String[]{"white","brown"};
         sugarColorNumber=new int[][]{ {255,255,255},{210,105,30}};
