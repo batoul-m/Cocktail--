@@ -12,7 +12,10 @@ package com.techwebdocs.cocktail;
 public class Cocktail {
 
     public static void main(String[] args) throws BlenderIsEmpty, BlenderOverFlow {
-       Blender blend = new Blender();
+       
+//        Logger fileLogger = new ConsoleLogger();
+//        Blender l = new Blender(fileLogger);
+          Blender l = new Blender();
        
        
 

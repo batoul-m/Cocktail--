@@ -6,7 +6,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import javax.swing.*;
 
-public class Blender implements Logger{
+public class Blender{
     
     private static ArrayList<Ingrediants> arr = new ArrayList <>();
     private static ArrayList<String> arr2 = new ArrayList <>();
@@ -15,14 +15,26 @@ public class Blender implements Logger{
     String typeOfCups = "";
     private String result = "";
     private int fnumbers = 0;
-    public Blender(){} 
+    private Logger logger;
+    
+    public Blender (){
+        
+    }
+    public Blender(Logger logger){
+        this.logger = logger;
+    } 
+    
+    public void add(String type){
+        this.logger.log("Adding ingrediants "+type);
+        
+    }
     
     public void addFruites(int num , String fruit){
         fnumbers += num ;
         arr.add(new Fruits(num,fruit));
         for(int i=num;i>0;i--){
             arr2.add(fruit);
-        }   
+        }
     }
     public void addMilk(String milk){
         arr.add(new Milk(milk));
@@ -83,9 +95,9 @@ public class Blender implements Logger{
         else{
             Color.setMixColor(arr2);
             Calories.setTotalCalories(arr2);
-        
-        
-    }
+        }
+        this.logger.log("blending...");
+    
     }
     
     public void pour() throws BlenderOverFlow{
@@ -94,11 +106,20 @@ public class Blender implements Logger{
         if((fruiteJuice + userCup.getMilkForCups(typeOfCups) )> ((userCup.getCupQuantity(typeOfCups))*numberOfCups)){   
             throw new BlenderOverFlow();
         }
+        this.logger.log("pouring ...");
     }
     
     public void clear(){
         arr.clear();
         arr2.clear();
+    }
+    
+    public void logBlend(){
+        this.logger.log("blending...");
+    }
+    
+    public void logPour(){
+        this.logger.log("pouring...");
     }
 }
 

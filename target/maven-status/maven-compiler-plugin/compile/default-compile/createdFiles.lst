@@ -1,8 +1,10 @@
 com/techwebdocs/cocktail/Cocktail.class
+com/techwebdocs/cocktail/ConsoleLogger.class
 com/techwebdocs/cocktail/fruit2Frame$3.class
 com/techwebdocs/cocktail/SecondFrame$4.class
 com/techwebdocs/cocktail/Color.class
 com/techwebdocs/cocktail/pourFrame.class
+com/techwebdocs/cocktail/cup$1.class
 com/techwebdocs/cocktail/milkSugarFrame$6.class
 com/techwebdocs/cocktail/pourFrame$3.class
 com/techwebdocs/cocktail/Fruits.class
@@ -20,12 +22,14 @@ com/techwebdocs/cocktail/cupFrame$3.class
 com/techwebdocs/cocktail/Ingrediants.class
 com/techwebdocs/cocktail/fruiteFrame$2.class
 com/techwebdocs/cocktail/finalFrame$1.class
+com/techwebdocs/cocktail/cup$2.class
 com/techwebdocs/cocktail/Calories.class
 com/techwebdocs/cocktail/cupFrame$4.class
 com/techwebdocs/cocktail/fruit2Frame$4.class
 com/techwebdocs/cocktail/milkSugarFrame.class
 com/techwebdocs/cocktail/fruiteFrame$5.class
 com/techwebdocs/cocktail/SecondFrame$2.class
+com/techwebdocs/cocktail/cup.class
 com/techwebdocs/cocktail/Milk.class
 com/techwebdocs/cocktail/pourFrame$4.class
 com/techwebdocs/cocktail/Logger.class
@@ -33,6 +37,7 @@ com/techwebdocs/cocktail/milkSugarFrame$3.class
 com/techwebdocs/cocktail/pourFrame$1.class
 com/techwebdocs/cocktail/finalFrame$4.class
 com/techwebdocs/cocktail/blendFrame$2.class
+com/techwebdocs/cocktail/fruit2Frame$8.class
 com/techwebdocs/cocktail/fruiteFrame$1.class
 com/techwebdocs/cocktail/Cup.class
 com/techwebdocs/cocktail/fruit2Frame$1.class
@@ -40,6 +45,7 @@ com/techwebdocs/cocktail/fruiteFrame$8.class
 com/techwebdocs/cocktail/cupFrame$1.class
 com/techwebdocs/cocktail/finalFrame$2.class
 com/techwebdocs/cocktail/cupFrame$5.class
+com/techwebdocs/cocktail/FileLogger.class
 com/techwebdocs/cocktail/firstFrame$1.class
 com/techwebdocs/cocktail/milkSugarFrame$1.class
 com/techwebdocs/cocktail/fruit2Frame$5.class

@@ -10,4 +10,5 @@ package com.techwebdocs.cocktail;
  */
 public interface Logger {
     
+    public abstract void log(String msg);
 }

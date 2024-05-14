@@ -4,18 +4,18 @@
  */
 package com.techwebdocs.cocktail;
 
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 
-/**
- *
- * @author user
- */
+
 public class pourFrame extends javax.swing.JFrame {
 
     private Blender blender = new Blender();
+    private Logger fileLogger = new FileLogger("mylog.log");
+    private Logger consoleLogger = new ConsoleLogger();
+    private Blender fileBlend = new Blender(fileLogger);
+    private Blender consoleBlend = new Blender(consoleLogger);
+    
     public pourFrame() {
         initComponents();
         homeButton.setIcon(new ImageIcon("/home/user/NetBeansProjects/cocktail/src/main/java/iconepackage/home(1).png"));
@@ -56,6 +56,7 @@ public class pourFrame extends javax.swing.JFrame {
         });
 
         nextButton.setBackground(new java.awt.Color(204, 204, 204));
+        nextButton.setEnabled(false);
         nextButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 nextButtonActionPerformed(evt);
@@ -182,7 +183,11 @@ public class pourFrame extends javax.swing.JFrame {
 
     private void pourButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pourButtonActionPerformed
         try {
+            nextButton.setEnabled(true);
+            fileBlend.logPour();
+            consoleBlend.logPour();
             blender.pour();
+ 
         } catch (BlenderOverFlow ex) {
                 JOptionPane.showMessageDialog(null, ex.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
                     int choice = JOptionPane.showOptionDialog(null, "Select an option", "Blender Overflow", 

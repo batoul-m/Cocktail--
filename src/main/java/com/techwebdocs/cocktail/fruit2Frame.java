@@ -15,6 +15,10 @@ public class fruit2Frame extends javax.swing.JFrame {
     private Blender blender = new Blender();
     private int num;
     private String fruitName;
+    private Logger fileLogger = new FileLogger("mylog.log");
+    private Logger consoleLogger = new ConsoleLogger();
+    private Blender fileBlend = new Blender(fileLogger);
+    private Blender consoleBlend = new Blender(consoleLogger);
     
     public fruit2Frame() {
         initComponents();
@@ -173,6 +177,11 @@ public class fruit2Frame extends javax.swing.JFrame {
         cherrySpinner.setModel(new javax.swing.SpinnerNumberModel(0, 0, 10, 1));
 
         addCherryButton.setBackground(new java.awt.Color(255, 204, 255));
+        addCherryButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                addCherryButtonActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
@@ -390,18 +399,24 @@ public class fruit2Frame extends javax.swing.JFrame {
     private void addAppleButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addAppleButtonActionPerformed
         fruitName = "apple";
         num = (int)appleSpinner.getValue();
+        consoleBlend.add("Fruit " + fruitName);
+        fileBlend.add("Fruit " + fruitName);
         addFruit(num,fruitName);
     }//GEN-LAST:event_addAppleButtonActionPerformed
 
     private void addMangoButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addMangoButtonActionPerformed
         fruitName = "mango";
-        num = (int)appleSpinner.getValue();
+        num = (int)mangoSpinner.getValue();
+        consoleBlend.add("Fruit " + fruitName);
+        fileBlend.add("Fruit " + fruitName);
         addFruit(num,fruitName);
     }//GEN-LAST:event_addMangoButtonActionPerformed
 
     private void addpineButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addpineButtonActionPerformed
         fruitName = "pineapple";
-        num = (int)appleSpinner.getValue();
+        num = (int)pineappleSpinner.getValue();
+        consoleBlend.add("Fruit " + fruitName);
+        fileBlend.add("Fruit " + fruitName);
         addFruit(num,fruitName);
     }//GEN-LAST:event_addpineButtonActionPerformed
 
@@ -414,6 +429,14 @@ public class fruit2Frame extends javax.swing.JFrame {
         new milkSugarFrame().setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_nextButtonActionPerformed
+
+    private void addCherryButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addCherryButtonActionPerformed
+        fruitName = "cherry";
+        num = (int)cherrySpinner.getValue();
+        consoleBlend.add("Fruit " + fruitName);
+        fileBlend.add("Fruit " + fruitName);
+        addFruit(num,fruitName);
+    }//GEN-LAST:event_addCherryButtonActionPerformed
                                              
 
     private void addFruit(int num,String fruitName){

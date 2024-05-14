@@ -4,15 +4,10 @@
  */
 package com.techwebdocs.cocktail;
 
-/**
- *
- * @author user
- */
+
 public class SecondFrame extends javax.swing.JFrame {
 
-    /**
-     * Creates new form SecondFrame
-     */
+
     public SecondFrame() {
         initComponents();
     }
@@ -100,11 +95,13 @@ public class SecondFrame extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void ingrediantsButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ingrediantsButtonActionPerformed
+
         new fruiteFrame().setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_ingrediantsButtonActionPerformed
 
     private void blendButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_blendButtonActionPerformed
+
         new blendFrame().setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_blendButtonActionPerformed

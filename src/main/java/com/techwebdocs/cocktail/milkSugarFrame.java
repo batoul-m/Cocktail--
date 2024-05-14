@@ -15,6 +15,11 @@ public class milkSugarFrame extends javax.swing.JFrame {
     private Blender blender = new Blender();
     private String milk;
     private String Sugar;
+    private Logger fileLogger = new FileLogger("mylog.log");
+    private Logger consoleLogger = new ConsoleLogger();
+    private Blender fileBlend = new Blender(fileLogger);
+    private Blender consoleBlend = new Blender(consoleLogger);
+    
     public milkSugarFrame() {
         initComponents();
         nextButton.setIcon(new ImageIcon("/home/user/NetBeansProjects/cocktail/src/main/java/iconepackage/next.png"));
@@ -91,6 +96,7 @@ public class milkSugarFrame extends javax.swing.JFrame {
 
         milkButtonGroup.add(normalRadioButton);
         normalRadioButton.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        normalRadioButton.setSelected(true);
         normalRadioButton.setText("Normal milk");
         normalRadioButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -329,16 +335,22 @@ public class milkSugarFrame extends javax.swing.JFrame {
         
     private void normalRadioButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_normalRadioButtonActionPerformed
         milk = "normal";
+        consoleBlend.add("Milk " + milk);
+        fileBlend.add("Milk " + milk);
         addMilk1(milk);
     }//GEN-LAST:event_normalRadioButtonActionPerformed
 
     private void lightRadioButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_lightRadioButtonActionPerformed
         milk = "light";
+        consoleBlend.add("Milk " + milk);
+        fileBlend.add("Milk " + milk);
         addMilk1(milk);
     }//GEN-LAST:event_lightRadioButtonActionPerformed
 
     private void oatRadioButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_oatRadioButtonActionPerformed
         milk = "oat milk";
+        consoleBlend.add("Milk " + milk);
+        fileBlend.add("Milk " + milk);
         addMilk1(milk);
     }//GEN-LAST:event_oatRadioButtonActionPerformed
 
@@ -373,6 +385,8 @@ public class milkSugarFrame extends javax.swing.JFrame {
                 String numberStr = numberField.getText();
                 try {
                     int number = Integer.parseInt(numberStr);
+                    consoleBlend.add("Sugar " + Sugar);
+                    fileBlend.add("Sugar " + Sugar);
                     addSugar1(Sugar, number);
                     break; 
                 } catch (NumberFormatException e) {
