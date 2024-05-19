@@ -186,23 +186,25 @@ public class pourFrame extends javax.swing.JFrame {
             nextButton.setEnabled(true);
             fileBlend.logPour();
             consoleBlend.logPour();
-            blender.pour();
- 
-        } catch (BlenderOverFlow ex) {
-                JOptionPane.showMessageDialog(null, ex.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
-                    int choice = JOptionPane.showOptionDialog(null, "Select an option", "Blender Overflow", 
-                    JOptionPane.DEFAULT_OPTION, JOptionPane.ERROR_MESSAGE, null, 
-                    new String[]{"Exit", "Home"}, "Exit");
+            blender.pour(); 
 
-        if (choice == 0) {
-        
-            System.exit(0); 
-        } else if (choice == 1) {
-            blender.clear();
-            new SecondFrame().setVisible(true);
-            this.setVisible(false);
-        }
+        } catch (BlenderOverFlow ex) {
+            JOptionPane.showMessageDialog(null, ex.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
+            int choice = JOptionPane.showOptionDialog(null, "Select an option", "Blender Overflow", 
+            JOptionPane.DEFAULT_OPTION, JOptionPane.ERROR_MESSAGE, null, 
+            new String[]{"Exit", "Home"}, "Exit");
+
+                if (choice == 0) {
+
+                    System.exit(0); 
+                } else if (choice == 1) {
+                    blender.clear();
+                    new SecondFrame().setVisible(true);
+                    this.setVisible(false);
+                }
     }
+        
+
     }//GEN-LAST:event_pourButtonActionPerformed
 
     private void homeButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_homeButtonActionPerformed

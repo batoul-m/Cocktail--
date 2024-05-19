@@ -163,8 +163,9 @@ public class blendFrame extends javax.swing.JFrame {
             fileBlend.logBlend();
             consoleBlend.logBlend();
             nour.setText("");
-            nour.setIcon(new ImageIcon("/home/user/NetBeansProjects/cocktail/src/main/java/iconepackage/blender(1)(2)_1.gif"));
+            nour.setIcon(new ImageIcon("/home/user/NetBeansProjects/cocktail/src/main/java/iconepackage/blender(1)(2)_1.gif"));                                           
             blender.blend();
+
         } catch (BlenderIsEmpty ex) {
             JOptionPane.showMessageDialog(null, ex.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
             int choice = JOptionPane.showOptionDialog(null, "Select an option", "Blender is Empty", 
@@ -177,7 +178,7 @@ public class blendFrame extends javax.swing.JFrame {
                 new SecondFrame().setVisible(true);
                 this.setVisible(false);
             }
-        }    
+        } 
     }//GEN-LAST:event_blendButtonActionPerformed
 
     private void homeButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_homeButtonActionPerformed

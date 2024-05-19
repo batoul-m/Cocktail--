@@ -4,17 +4,16 @@ package com.techwebdocs.cocktail;
 
 import java.util.ArrayList;
 import java.util.Arrays;
-import javax.swing.*;
 
 public class Blender{
     
     private static ArrayList<Ingrediants> arr = new ArrayList <>();
     private static ArrayList<String> arr2 = new ArrayList <>();
-    private Cup userCup = new Cup();
-    int numberOfCups = 0;
-    String typeOfCups = "";
+    private static Cup userCup = new Cup();
+    private static int numberOfCups = 0;
+    private static String typeOfCups = "";
     private String result = "";
-    private int fnumbers = 0;
+    private static int fnumbers = 0;
     private Logger logger;
     
     public Blender (){
@@ -50,6 +49,8 @@ public class Blender{
     
     
     public void cup(int numberOfCups , String typeOfCups){
+        this.numberOfCups = numberOfCups;
+        this.typeOfCups = typeOfCups;
         userCup=new Cup(numberOfCups,typeOfCups);
     }
     
@@ -89,29 +90,34 @@ public class Blender{
     }
   
     public void blend() throws BlenderIsEmpty{
-        if(arr.isEmpty()){
+        if(empty()){
             throw new BlenderIsEmpty();
         }
         else{
             Color.setMixColor(arr2);
             Calories.setTotalCalories(arr2);
         }
-        this.logger.log("blending...");
     
     }
     
     public void pour() throws BlenderOverFlow{
-        double fruiteJuice = fnumbers*40;
 
-        if((fruiteJuice + userCup.getMilkForCups(typeOfCups) )> ((userCup.getCupQuantity(typeOfCups))*numberOfCups)){   
+        if( ( (fnumbers*40) + userCup.getMilkForCups(typeOfCups) )> ((userCup.getCupQuantity(typeOfCups))*numberOfCups)){   
             throw new BlenderOverFlow();
         }
-        this.logger.log("pouring ...");
+        else{
+            System.out.println("done");
+        }
     }
     
     public void clear(){
         arr.clear();
         arr2.clear();
+        fnumbers = 0;
+    }
+    
+    public boolean empty(){
+        return arr.isEmpty();
     }
     
     public void logBlend(){

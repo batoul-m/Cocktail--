@@ -38,7 +38,7 @@ public class Cup {
     }
 
     public void setCount(int count) {
-        this.count = count > 0 ? count : 0 ;
+        this.count = count > 0 ? count : 1 ;
     }
 
     public String getSize() {
