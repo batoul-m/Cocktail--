@@ -114,6 +114,8 @@ public class Blender{
         arr.clear();
         arr2.clear();
         fnumbers = 0;
+        numberOfCups = 0;
+        typeOfCups = "";
     }
     
     public boolean empty(){
