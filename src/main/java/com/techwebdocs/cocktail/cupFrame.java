@@ -13,12 +13,8 @@ public class cupFrame extends javax.swing.JFrame {
     private String cupName;
     public cupFrame() {
         initComponents();
-        java.net.URL imgURL = getClass().getClassLoader().getResource("iconepackage/cold-drink_1_-removebg-preview.png");
-        if (imgURL != null) {
-            jLabel2.setIcon(new ImageIcon(imgURL));
-        } else {
-            System.err.println("Couldn't find file: cold-drink_1_-removebg-preview.png");
-        }
+        jLabel2.setIcon(new ImageIcon(getClass().getClassLoader().getResource("iconepackage/cold-drink_1_-removebg-preview.png")));
+
            
     }
 
