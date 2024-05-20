@@ -18,9 +18,9 @@ public class pourFrame extends javax.swing.JFrame {
     
     public pourFrame() {
         initComponents();
-        homeButton.setIcon(new ImageIcon("/home/user/NetBeansProjects/cocktail/src/main/java/iconepackage/home(1).png"));
-        nextButton.setIcon(new ImageIcon("/home/user/NetBeansProjects/cocktail/src/main/java/iconepackage/next.png"));
-        picLabel.setIcon(new ImageIcon("/home/user/NetBeansProjects/cocktail/src/main/java/iconepackage/pour.png"));
+        homeButton.setIcon(new ImageIcon(getClass().getClassLoader().getResource("iconepackage/home(1).png")));
+        nextButton.setIcon(new ImageIcon(getClass().getClassLoader().getResource("iconepackage/next.png")));
+        picLabel.setIcon(new ImageIcon(getClass().getClassLoader().getResource("iconepackage/pour.png")));
     }
 
     /**

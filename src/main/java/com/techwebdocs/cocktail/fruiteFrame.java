@@ -20,16 +20,16 @@ public class fruiteFrame extends javax.swing.JFrame {
     
     public fruiteFrame() {
         initComponents();
-        homeButton.setIcon(new ImageIcon("/home/user/NetBeansProjects/cocktail/src/main/java/iconepackage/home(1).png"));
-        nextButton.setIcon(new ImageIcon("/home/user/NetBeansProjects/cocktail/src/main/java/iconepackage/next.png"));
-        orangeLabel.setIcon(new ImageIcon("/home/user/NetBeansProjects/cocktail/src/main/java/iconepackage/orange(1).png"));
-        strLabel.setIcon(new ImageIcon("/home/user/NetBeansProjects/cocktail/src/main/java/iconepackage/strawberry.png"));
-        bananaLabel.setIcon(new ImageIcon("/home/user/NetBeansProjects/cocktail/src/main/java/iconepackage/banana(3).png"));
-        blueLabel.setIcon(new ImageIcon("/home/user/NetBeansProjects/cocktail/src/main/java/iconepackage/blueberry_1.png"));
-        addBananaButton.setIcon(new ImageIcon("/home/user/NetBeansProjects/cocktail/src/main/java/iconepackage/add(1).png"));
-        addBluberriesButton.setIcon(new ImageIcon("/home/user/NetBeansProjects/cocktail/src/main/java/iconepackage/add(1).png"));
-        addOrangeButton.setIcon(new ImageIcon("/home/user/NetBeansProjects/cocktail/src/main/java/iconepackage/add(1).png"));
-        addStrawbarryButton1.setIcon(new ImageIcon("/home/user/NetBeansProjects/cocktail/src/main/java/iconepackage/add(1).png"));
+        homeButton.setIcon(new ImageIcon(getClass().getClassLoader().getResource("iconepackage/home(1).png")));
+        nextButton.setIcon(new ImageIcon(getClass().getClassLoader().getResource("iconepackage/next.png")));
+        orangeLabel.setIcon(new ImageIcon(getClass().getClassLoader().getResource("iconepackage/orange(1).png")));
+        strLabel.setIcon(new ImageIcon(getClass().getClassLoader().getResource("iconepackage/strawberry.png")));
+        bananaLabel.setIcon(new ImageIcon(getClass().getClassLoader().getResource("iconepackage/banana(3).png")));
+        blueLabel.setIcon(new ImageIcon(getClass().getClassLoader().getResource("iconepackage/blueberry_1.png")));
+        addBananaButton.setIcon(new ImageIcon(getClass().getClassLoader().getResource("iconepackage/add(1).png")));
+        addBluberriesButton.setIcon(new ImageIcon(getClass().getClassLoader().getResource("iconepackage/add(1).png")));
+        addOrangeButton.setIcon(new ImageIcon(getClass().getClassLoader().getResource("iconepackage/add(1).png")));
+        addStrawbarryButton1.setIcon(new ImageIcon(getClass().getClassLoader().getResource("iconepackage/add(1).png")));
 
 
 

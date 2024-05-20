@@ -22,16 +22,16 @@ public class fruit2Frame extends javax.swing.JFrame {
     
     public fruit2Frame() {
         initComponents();
-        appleLabel.setIcon(new ImageIcon("/home/user/NetBeansProjects/cocktail/src/main/java/iconepackage/apple.png"));
-        addAppleButton.setIcon(new ImageIcon("/home/user/NetBeansProjects/cocktail/src/main/java/iconepackage/add(1).png"));
-        cherryLabel.setIcon(new ImageIcon("/home/user/NetBeansProjects/cocktail/src/main/java/iconepackage/cherries.png"));
-        addCherryButton.setIcon(new ImageIcon("/home/user/NetBeansProjects/cocktail/src/main/java/iconepackage/add(1).png"));
-        mangoLabel.setIcon(new ImageIcon("/home/user/NetBeansProjects/cocktail/src/main/java/iconepackage/mango.png"));
-        addMangoButton.setIcon(new ImageIcon("/home/user/NetBeansProjects/cocktail/src/main/java/iconepackage/add(1).png"));
-        homeButton.setIcon(new ImageIcon("/home/user/NetBeansProjects/cocktail/src/main/java/iconepackage/home(1).png"));
-        pineLabel.setIcon(new ImageIcon("/home/user/NetBeansProjects/cocktail/src/main/java/iconepackage/pineapple(1).png"));
-        addpineButton.setIcon(new ImageIcon("/home/user/NetBeansProjects/cocktail/src/main/java/iconepackage/add(1).png"));
-        nextButton.setIcon(new ImageIcon("/home/user/NetBeansProjects/cocktail/src/main/java/iconepackage/next.png"));
+        appleLabel.setIcon(new ImageIcon(getClass().getClassLoader().getResource("iconepackage/apple.png")));
+        addAppleButton.setIcon(new ImageIcon(getClass().getClassLoader().getResource("iconepackage/add(1).png")));
+        cherryLabel.setIcon(new ImageIcon(getClass().getClassLoader().getResource("iconepackage/cherries.png")));
+        addCherryButton.setIcon(new ImageIcon(getClass().getClassLoader().getResource("iconepackage/add(1).png")));
+        mangoLabel.setIcon(new ImageIcon(getClass().getClassLoader().getResource("iconepackage/mango.png")));
+        addMangoButton.setIcon(new ImageIcon(getClass().getClassLoader().getResource("iconepackage/add(1).png")));
+        homeButton.setIcon(new ImageIcon(getClass().getClassLoader().getResource("iconepackage/home(1).png")));
+        pineLabel.setIcon(new ImageIcon(getClass().getClassLoader().getResource("iconepackage/pineapple(1).png")));
+        addpineButton.setIcon(new ImageIcon(getClass().getClassLoader().getResource("iconepackage/add(1).png")));
+        nextButton.setIcon(new ImageIcon(getClass().getClassLoader().getResource("iconepackage/next.png")));
     }
 
     /**

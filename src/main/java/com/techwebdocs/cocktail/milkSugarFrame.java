@@ -22,10 +22,10 @@ public class milkSugarFrame extends javax.swing.JFrame {
     
     public milkSugarFrame() {
         initComponents();
-        nextButton.setIcon(new ImageIcon("/home/user/NetBeansProjects/cocktail/src/main/java/iconepackage/next.png"));
-        sugarLabel.setIcon(new ImageIcon("/home/user/NetBeansProjects/cocktail/src/main/java/iconepackage/sugar.png"));
-        milkLabel.setIcon(new ImageIcon("/home/user/NetBeansProjects/cocktail/src/main/java/iconepackage/milk-box.png"));
-        homeButton.setIcon(new ImageIcon("/home/user/NetBeansProjects/cocktail/src/main/java/iconepackage/home(1).png"));
+        nextButton.setIcon(new ImageIcon(getClass().getClassLoader().getResource("iconepackage/next.png")));
+        sugarLabel.setIcon(new ImageIcon(getClass().getClassLoader().getResource("iconepackage/sugar.png")));
+        milkLabel.setIcon(new ImageIcon(getClass().getClassLoader().getResource("iconepackage/milk-box.png")));
+        homeButton.setIcon(new ImageIcon(getClass().getClassLoader().getResource("iconepackage/home(1).png")));
 
     }
 

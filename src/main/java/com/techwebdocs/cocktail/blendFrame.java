@@ -15,8 +15,8 @@ public class blendFrame extends javax.swing.JFrame {
     
     public blendFrame() {
         initComponents();
-        homeButton.setIcon(new ImageIcon("/home/user/NetBeansProjects/cocktail/src/main/java/iconepackage/home(1).png"));
-        nextButton.setIcon(new ImageIcon("/home/user/NetBeansProjects/cocktail/src/main/java/iconepackage/next.png"));
+        homeButton.setIcon(new ImageIcon(getClass().getClassLoader().getResource("iconepackage/home(1).png")));
+        nextButton.setIcon(new ImageIcon(getClass().getClassLoader().getResource("iconepackage/next.png")));
     }
 
     @SuppressWarnings("unchecked")
@@ -163,7 +163,7 @@ public class blendFrame extends javax.swing.JFrame {
             fileBlend.logBlend();
             consoleBlend.logBlend();
             nour.setText("");
-            nour.setIcon(new ImageIcon("/home/user/NetBeansProjects/cocktail/src/main/java/iconepackage/blender(1)(2)_1.gif"));                                           
+            nour.setIcon(new ImageIcon(getClass().getClassLoader().getResource("iconepackage/blender(1)(2)_1.gif")));                                           
             blender.blend();
 
         } catch (BlenderIsEmpty ex) {

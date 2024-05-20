@@ -17,7 +17,7 @@ public class firstFrame extends javax.swing.JFrame {
      */
     public firstFrame() {
         initComponents();
-        jLabel1.setIcon(new ImageIcon("/home/user/NetBeansProjects/cocktail/src/main/java/iconepackage/Cap-removebg-preview.png"));
+        jLabel1.setIcon(new ImageIcon(getClass().getClassLoader().getResource("iconepackage/Cap-removebg-preview.png")));
 
     }
 
